@@ -13,7 +13,6 @@ import NetInfo from "@react-native-community/netinfo";
 const Browser = () => {
   const [canGoBack, setCanGoBack] = useState(false);
   const [isConnected, setIsConnected] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
   const webViewRef = useRef(null);
 
   // Check Internet Connection
@@ -62,13 +61,7 @@ const Browser = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      {isLoading && (
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#007AFF" />
-        </View>
-      )}
-
-      {/* WebView */}
+     
       <WebView
         ref={webViewRef}
         source={{ uri: "https://mrchatur.com/" }}
@@ -76,16 +69,7 @@ const Browser = () => {
         onNavigationStateChange={(navState) => {
           setCanGoBack(navState.canGoBack);
         }}
-        onLoadStart={() => {
-          console.log("Loading started");
-          setIsLoading(true);
-        }}
-        onLoadEnd={() => {
-          console.log("Loading ended");
-          setIsLoading(false);
-        }}
        
-        startInLoadingState={true}
       />
     </View>
   );
