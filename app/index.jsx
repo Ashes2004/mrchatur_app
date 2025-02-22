@@ -4,7 +4,7 @@ import {
   Text,
   StyleSheet,
   BackHandler,
-  ActivityIndicator,
+  
 } from "react-native";
 import { WebView } from "react-native-webview";
 import { Ionicons } from "@expo/vector-icons";
@@ -89,17 +89,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#FF3B30",
   },
-  loadingContainer: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(255,255,255,0.8)", // Light overlay to indicate loading
-    zIndex: 1,
-  },
+
 });
 
 export default Browser;
